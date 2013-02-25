@@ -500,3 +500,26 @@ Stack trace:
 #10 {main}
 REQUEST_URI=/YiiDemo/website/test
 ---
+2013/02/25 10:27:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "test".' in E:\xampp_new\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp_new\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('test')
+#1 E:\xampp_new\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 E:\xampp_new\htdocs\YiiDemo\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/YiiDemo/test
+---
+2013/02/25 17:48:27 [error] [exception.CException] exception 'CException' with message 'TestController cannot find the requested view "test".' in E:\xampp_new\htdocs\yii\framework\web\CController.php:878
+Stack trace:
+#0 E:\xampp_new\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('test', NULL, true)
+#1 E:\xampp_new\htdocs\YiiDemo\protected\controllers\TestController.php(15): CController->render('test')
+#2 E:\xampp_new\htdocs\yii\framework\web\actions\CInlineAction.php(49): TestController->actionIndex()
+#3 E:\xampp_new\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\xampp_new\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\xampp_new\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\xampp_new\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 E:\xampp_new\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('test')
+#8 E:\xampp_new\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 E:\xampp_new\htdocs\YiiDemo\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/YiiDemo/test
+---
