@@ -48,9 +48,9 @@ return array(
 //                '<alias:about>' => 'website/page', // http://localhost/yourwebapp/about
 //                'page/<alias>' => 'website/page', // http://localhost/yourwebapp/page/<any string>
 
-                '<alias:about>' => 'website/page',
-                'page/about/<alias:authors>' => 'website/page',
-                'page/<alias>' => 'website/page',
+//                '<alias:about>' => 'website/page',
+//                'page/about/<alias:authors>' => 'website/page',
+//                'page/<alias>' => 'website/page',
 			),
 		),
 

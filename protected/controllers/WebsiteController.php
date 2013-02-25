@@ -25,8 +25,8 @@ class WebsiteController extends CController
     }
 
     public function actionTest() {
-        echo $this->createUrl('index');
-        echo $this->createUrl('website/page', array('alias' => 'about'));
-        echo $this->createAbsoluteUrl('website/page', array('alias' => 'about'));
+        echo $this->createUrl('index').'<br />';
+        echo $this->createUrl('website/page', array('alias' => 'about')).'<br />';
+        echo $this->createAbsoluteUrl('website/page', array('alias' => 'about')).'<br />';
     }
 }
