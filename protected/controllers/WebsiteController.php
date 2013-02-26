@@ -29,4 +29,10 @@ class WebsiteController extends CController
         echo $this->createUrl('website/page', array('alias' => 'about')).'<br />';
         echo $this->createAbsoluteUrl('website/page', array('alias' => 'about')).'<br />';
     }
+
+    public function actionCookie() {
+        $cookie = Cookie::get('test');
+        if ($cookie) echo $cookie;
+        else Cookie::set('test', 'I am a cookie!!');
+    }
 }

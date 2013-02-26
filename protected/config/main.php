@@ -20,14 +20,13 @@ return array(
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		/*
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'password',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-		*/
+
 	),
 
 	// application components
@@ -51,7 +50,23 @@ return array(
 //                '<alias:about>' => 'website/page',
 //                'page/about/<alias:authors>' => 'website/page',
 //                'page/<alias>' => 'website/page',
+
+                // Creating URL rules for static pages
+//                '<alias:about>' => 'website/page',
+//                '<alias:contact>' => 'website/page',
+//                '<alias:tos>' => 'website/page',
+
+                // Creating URL rules for static pages by using regular expressions
+                //'<alias:(about|contact|tos)>' => 'website/page'
+
+                // Creating URL rules for static pages /tos and an alias parameter to be term_of_service
+                //'tos' => array('website/page', 'defaultParams' => array('alias' => 'term_of_service')),
+
+                // Creating URL rules for all static pages, should place it last
+                //'<alias>' => 'website/page',
 			),
+
+            'showScriptName' => false
 		),
 
 		'db'=>array(

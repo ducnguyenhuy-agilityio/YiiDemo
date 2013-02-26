@@ -33,7 +33,34 @@ class TestController extends CController
         $request->sendFile('duc.txt', 'File content goes here.');// Download duc.txt with content 'File content goes here.' in it
     }
 
+    public function actionImport($song) {
+        $lyric = 'Noting was found.';
+
+        // importing a class
+        Yii::import('application.apis.lyrics.LyricsFinder');
+
+        $finder = new LyricsFinder();
+
+        if (!empty($song)) {
+            $lyric = $finder->getText($song);
+        }
+
+        echo $lyric;
+    }
+
     public function actionCookie() {
-        
+        $request = Yii::app()->request;
+
+        // getting a cookie
+        $cookie = $request->cookies['test'];
+
+        if ($cookie)
+            // printing cookie value
+            echo $cookie->value;
+        else {
+            // creating new cookie
+            $cookie = new CHttpCookie('test', 'I am a cookie!');
+            $request->cookies['test'] = $cookie;
+        }
     }
 }
