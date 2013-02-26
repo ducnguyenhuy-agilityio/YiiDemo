@@ -29,6 +29,8 @@ return array(
 
 	),
 
+    'onBeginRequest' => array('ModuleUrlManager', 'collectRules'),
+
 	// application components
 	'components'=>array(
 		'user'=>array(
