@@ -15,13 +15,17 @@ class DeleteAction extends CAction
             throw new CHttpException(404);
 
         //$post = Post::model()->findByPk($_GET['id']);
-        $post = CActiveRecord::model($this->modelClass)->findByPk($_GET[$this->id]);
+        $model = CActiveRecord::model($this->modelClass)->findByPk($_GET[$this->pk]);
 
-        if (!$post)
+        if (!$model)
             throw new CHttpException(404);
 
-        if ($post->delete())
-            $this->redirect($this->redirectTo);
+        if ($model->delete()) {
+            // Get Controller who owns this action
+            $controller = $this->getController();
+            $controller->redirect(array('index', 'model' => $this->modelClass));
+        }
+
 
         throw new CHttpException(500);
     }
