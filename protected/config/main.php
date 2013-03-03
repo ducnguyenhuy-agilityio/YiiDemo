@@ -68,6 +68,8 @@ return array(
 
                 // Creating URL rules for all static pages, should place it last
                 //'<alias>' => 'website/page',
+
+                '<view:(about|contact)>' => 'staticpages/page'
 			),
 
             'showScriptName' => false
@@ -79,10 +81,10 @@ return array(
 		// uncomment the following to use a MySQL database
 
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=yii_external_actions',
+			'connectionString' => 'mysql:host=localhost;dbname=external_actions',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'root',
+			'password' => '',
 			'charset' => 'utf8',
 		),
 

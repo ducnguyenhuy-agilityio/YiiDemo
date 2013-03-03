@@ -23,9 +23,8 @@ class DeleteAction extends CAction
         if ($model->delete()) {
             // Get Controller who owns this action
             $controller = $this->getController();
-            $controller->redirect(array('index', 'model' => $this->modelClass));
+            $controller->redirect(array('index', 'model' => $this->modelClass, 'name'=> 'Duc'));
         }
-
 
         throw new CHttpException(500);
     }

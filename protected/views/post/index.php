@@ -8,9 +8,10 @@
  */
 
 //var_dump($posts);
+//
+//foreach ($posts as $post) {
+//    var_dump($post);
+//}
 
-foreach ($posts as $post) {
-    var_dump($post);
-}
-
-echo $model;
+echo isset($_GET['model'])?$_GET['model']:'';
+echo isset($_GET['name'])?$_GET['name']:'';

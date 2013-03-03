@@ -16,6 +16,39 @@ class PostController extends CController
         $this->render('index', array('posts' => $posts));
     }
 
+    function actionAll() {
+        $criteria = new CDbCriteria();
+        // Get total models count
+        $count = Post::model()->count($criteria);
+
+        // Initialize new pagination component instance with total models count
+        $pages = new CPagination($count);
+
+        // Element per page
+        $pages->pageSize = 5;
+        // Apply limit and offset to criteria
+        $pages->applyLimit($criteria);
+
+        // sorting
+        // Create sorter instance for the model
+        $sort = new CSort('Post');
+        $sort->attributes = array(
+            'id',
+            'title'
+        );
+        // Sort by and applying order conditions to criteria
+        $sort->applyOrder($criteria);
+
+        // Give criteria to findAll
+        $models = Post::model()->findAll($criteria);
+
+        $this->render('all', array(
+            'models' => $models,
+            'pages' => $pages,
+            'sort' => $sort
+        ));
+    }
+
     // Comment out this function because we created this action in separate class (DeleteAction)
 //    function actionDelete($id) {
 //        // Try to find post by primary key

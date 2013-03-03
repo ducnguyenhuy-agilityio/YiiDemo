@@ -43,6 +43,9 @@
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
 
+    <!-- Check existence of clip beforeContent, then show it. -->
+    <?php if(!empty($this->clips['beforeContent'])) echo $this->clips['beforeContent'];?>
+
 	<?php echo $content; ?>
 
 	<div class="clear"></div>
@@ -52,6 +55,8 @@
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
+
+    <?php if(!empty($this->clips['footer'])) echo $this->clips['footer']?>
 
 </div><!-- page -->
 
