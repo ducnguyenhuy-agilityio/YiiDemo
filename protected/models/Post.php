@@ -21,6 +21,10 @@ class Post extends CActiveRecord
 		return parent::model($className);
 	}
 
+    protected function beforeSave() {
+        $this->content = $this->content.' - modified';
+    }
+
 	/**
 	 * @return string the associated database table name
 	 */

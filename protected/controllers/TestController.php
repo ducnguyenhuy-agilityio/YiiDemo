@@ -63,4 +63,8 @@ class TestController extends CController
             $request->cookies['test'] = $cookie;
         }
     }
+
+    public function ActionUsePost() {
+
+}
 }
