@@ -81,10 +81,10 @@ return array(
 		// uncomment the following to use a MySQL database
 
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=external_actions',
+			'connectionString' => 'mysql:host=localhost;dbname=yii_external_actions',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'root',
 			'charset' => 'utf8',
 		),
 
@@ -114,5 +114,9 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
+        'alert' => array (
+            'enabled' => true,
+            'message' => 'Hello there!'
+        )
 	),
 );
